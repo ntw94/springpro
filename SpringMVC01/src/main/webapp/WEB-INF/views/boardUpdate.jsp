@@ -26,7 +26,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">BOARD</div>
 			<div class="panel-body">
-				<form action="boardUpdateProc.do" method="post">
+				<form action="/m01/boardUpdateProc.do" method="post">
 					<table class="table">
 						<input type="hidden" name="idx" value="${vo.idx }" />
 						<tr>
@@ -35,9 +35,7 @@
 						</tr>
 						<tr>
 							<td>내용</td>
-							<td><textarea rows="7" class="form-control" name="content">
-									${fn:replace(vo.content,newLineChar,"<br>") }
-									</textarea></td>
+							<td><textarea rows="7" class="form-control" name="content">${vo.content}</textarea></td>
 						</tr>
 						<tr>
 							<td>작성자</td>
@@ -46,7 +44,7 @@
 						<tr>
 							<td colspan="2" align="center">
 								<button type="submit" class="btn btn-success btn-sm">수정</button>
-								<a href="boardList.do" class="btn btn-warning btn-sm">목록</a>
+								<a href="/m01/boardList.do" class="btn btn-warning btn-sm">목록</a>
 							</td>
 						</tr>
 					</table>
