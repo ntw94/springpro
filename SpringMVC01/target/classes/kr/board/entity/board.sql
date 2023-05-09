@@ -13,3 +13,5 @@ insert into myboard(title,content,writer) values('게시판 연습','게시판 �
 insert into myboard(title,content,writer) values('게시판 연습','게시판 연습','누루루루');
 
 select * from myboard;
+
+select * from myboard where idx =7;

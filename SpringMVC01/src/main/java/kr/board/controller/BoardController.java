@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -55,4 +56,28 @@ public class BoardController {
 		return "boardContent";// boardContent.jsp
 	}
 	
+	@GetMapping("/boardDelete.do/{idx}")
+	public String boardDelete(@PathVariable("idx")int idx) {
+		
+		mapper.boardDelete(idx);
+		
+		return "redirect:/boardList.do";// boardContent.jsp
+	}
+	
+	@GetMapping("/boardUpdate.do/{idx}")
+	public String boardUpdate(@PathVariable("idx")int idx,Model model) {
+		
+		Board vo = mapper.boardContent(idx);
+		model.addAttribute("vo", vo);
+		
+		return "boardUpdate.do";// boardContent.jsp
+	}
+	
+	@PostMapping("/boardUpdateProc.do")
+	public String boardUpdateProc(Board vo) {
+		
+		mapper.boardUpdate(vo);
+		
+		return "redirect:/boardList.do";
+	}
 }
