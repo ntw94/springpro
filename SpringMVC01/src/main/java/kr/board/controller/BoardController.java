@@ -9,12 +9,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.board.entity.Board;
 import kr.board.mapper.BoardMapper;
 
 //@Component 보다는 컨트롤러라고 하는게 낫다
-@Controller // 해당클래스가 controller구나
+@Controller
 public class BoardController {
 
 	 @Autowired
@@ -42,6 +43,16 @@ public class BoardController {
 		mapper.boardInsert(vo);
 		
 		return "redirect:/boardList.do"; // redirect
+	}
+	
+	@GetMapping("/boardContent.do")
+	public String boardContent(@RequestParam("idx")int idx,Model model) {
+		
+		Board vo = mapper.boardContent(idx);
+		System.out.println(vo.getContent());
+		model.addAttribute("vo",vo);
+		
+		return "boardContent";// boardContent.jsp
 	}
 	
 }

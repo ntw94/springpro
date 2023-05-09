@@ -7,9 +7,14 @@
         select * from myboard order by idx desc;
     </select>
     
-    <select id="boardInsert" parameterType="kr.board.entity.Board">
+    <insert id="boardInsert" parameterType="kr.board.entity.Board">
         insert into myboard(title,content,writer)
         values(#{title},#{content},#{writer})
-    </select>
+    </insert>
    
+    <select id = "boardContent" resultType="kr.board.entity.Board">
+        select * from myboard where idx = #{idx};
+    </select>
+    
+    
 </mapper>
