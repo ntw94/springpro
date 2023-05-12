@@ -93,7 +93,7 @@
       </form>    
     </div>
     
-    <div class="panel-footer">노태웅</div>
+    <div class="panel-footer"></div>
   </div>
 </div>
 </body>
