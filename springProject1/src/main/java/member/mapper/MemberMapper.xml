@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="member.mapper.MemberMapper">
+    
+    <select id="getList" resultType="member.model.Member">
+        select * from member;
+    </select>
+   
+    <select id="getListOne" resultType="member.model.Member">
+        select * from member where member_id = #{member_id}
+    </select>
+    
+    <insert id="setInsert">
+        insert into member(member_id,member_pwd,member_name,member_email)
+        values(#{member_id},#{member_pwd},#{member_name},#{member_email})
+    </insert>
+    
+    <delete id="setDelete">
+    </delete>
+    
+    <update id="setUpdate">
+    </update>
+    
+    <select id="setLogin" resultType="member.model.Member">
+        select * from member
+        where member_id = #{member_id} and member_pwd = #{member_pwd}
+    </select>
+    
+</mapper>
