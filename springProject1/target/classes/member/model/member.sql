@@ -10,9 +10,14 @@ create table member(
 	unique(member_id)
 )
 
+
 select * from member;
 
 drop table member;
 
 insert into member (member_id,member_pwd,member_name,member_email)
 	   values ('hong','1234','홍길동','hong@hong.com');
+	   
+	   
+	   
+	   

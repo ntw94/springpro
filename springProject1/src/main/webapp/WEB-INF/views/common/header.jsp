@@ -11,8 +11,8 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="${contextPath}">홈</a></li>
-      <li><a href="#">게시판</a></li>
-      
+      <li><a href="${contextPath}/boardList.do">게시판</a></li>
+      <li>${prevContextPath }</li>"
     </ul>
   
     <c:if test="${empty member}">

@@ -21,6 +21,9 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="member.*" />
+	<context:component-scan base-package="board.*" />
+	<context:component-scan base-package="comment.*" />
+	<context:component-scan base-package="_common.*" />
 	
 	
 </beans:beans>

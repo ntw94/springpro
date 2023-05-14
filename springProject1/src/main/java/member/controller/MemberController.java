@@ -25,9 +25,6 @@ public class MemberController {
 	@RequestMapping("/*")
 	public String index(Model model) {
 		
-		List<Member> list= mapper.getList();
-		
-		model.addAttribute("list",list);
 		
 		return "index";
 	}
